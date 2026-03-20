@@ -2,7 +2,6 @@ import re
 import sys
 import argparse
 
-
 def extract_setpos(text):
     pattern = re.compile(
         r'setpos\s+-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?\s+-?\d+(?:\.\d+)?'
@@ -10,7 +9,6 @@ def extract_setpos(text):
         re.IGNORECASE
     )
     return pattern.findall(text)
-
 
 def main():
     parser = argparse.ArgumentParser(
@@ -32,9 +30,6 @@ def main():
     with open(args.output, 'w') as f:
         for match in matches:
             f.write(match + '\n')
-
-    print(args.output)
-
 
 if __name__ == '__main__':
     main()
